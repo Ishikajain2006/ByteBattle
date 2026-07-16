@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | CodeArena</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+   
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <h2>CodeArena</h2>
+        </div>
+
+        <ul class="sidebar-links">
+
+            <li class="active">
+                <a href="dashboard.html">
+                    📊 Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="problems.html">
+                    💻 Problems
+                </a>
+            </li>
+
+            <li>
+                <a href="leaderboard.html">
+                    🏆 Leaderboard
+                </a>
+            </li>
+
+            <li>
+                <a href="contest.html">
+                    🎯 Contests
+                </a>
+            </li>
+
+            <li>
+                <a href="profile.html">
+                    👤 Profile
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html">
+                    🚪 Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <main class="main-content">
+
+
+        <header class="topbar">
+
+            <div>
+                <h1>Welcome Back 👋</h1>
+                <p>Track your coding journey and performance.</p>
+            </div>
+
+            <button id="themeToggle" class="theme-btn">
+                🌙
+            </button>
+
+        </header>
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <h3>Problems Solved</h3>
+
+                <h2 id="solvedCount">
+                    128
+                </h2>
+
+                <span>+12 this week</span>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h3>Current Streak</h3>
+
+                <h2 id="streakCount">
+                    18 Days
+                </h2>
+
+                <span>Keep going 🔥</span>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h3>Global Rank</h3>
+
+                <h2>
+                    #542
+                </h2>
+
+                <span>Top 12%</span>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h3>Contest Rating</h3>
+
+                <h2>
+                    1645
+                </h2>
+
+                <span>Knight</span>
+
+            </div>
+
+        </section>
+
+        <section class="dashboard-row">
+
+            <div class="progress-card">
+
+                <h2>Problem Progress</h2>
+
+                <div class="progress-box">
+
+                    <div class="progress-info">
+                        <span>Easy</span>
+                        <span>80 / 150</span>
+                    </div>
+
+                    <div class="progress-bar">
+                        <div class="easy-progress"></div>
+                    </div>
+
+                </div>
+
+                <div class="progress-box">
+
+                    <div class="progress-info">
+                        <span>Medium</span>
+                        <span>38 / 200</span>
+                    </div>
+
+                    <div class="progress-bar">
+                        <div class="medium-progress"></div>
+                    </div>
+
+                </div>
+
+                <div class="progress-box">
+
+                    <div class="progress-info">
+                        <span>Hard</span>
+                        <span>10 / 100</span>
+                    </div>
+
+                    <div class="progress-bar">
+                        <div class="hard-progress"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="challenge-card">
+
+                <h2>Daily Challenge 🎯</h2>
+
+                <h3>Longest Substring Without Repeating Characters</h3>
+
+                <p>
+                    Solve today's challenge and maintain your streak.
+                </p>
+
+                <button class="challenge-btn">
+                    Solve Now
+                </button>
+
+            </div>
+
+        </section>
+        
+
+        <section class="submission-card">
+
+            <h2>Recent Submissions</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Problem</th>
+                        <th>Status</th>
+                        <th>Language</th>
+                        <th>Time</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Two Sum</td>
+                        <td class="accepted">
+                            Accepted
+                        </td>
+                        <td>C++</td>
+                        <td>2 min ago</td>
+                    </tr>
+
+                    <tr>
+                        <td>Merge Sorted Array</td>
+                        <td class="accepted">
+                            Accepted
+                        </td>
+                        <td>C++</td>
+                        <td>15 min ago</td>
+                    </tr>
+
+                    <tr>
+                        <td>Binary Tree Paths</td>
+                        <td class="wrong">
+                            Wrong Answer
+                        </td>
+                        <td>C++</td>
+                        <td>1 hour ago</td>
+                    </tr>
+
+                    <tr>
+                        <td>Maximum Subarray</td>
+                        <td class="accepted">
+                            Accepted
+                        </td>
+                        <td>C++</td>
+                        <td>3 hours ago</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/dashboard.js"></script>
+
+</body>
+
+</html>

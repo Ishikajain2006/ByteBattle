@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem | CodeArena</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/prob-detail.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <h2>CodeArena</h2>
+        </div>
+
+        <ul class="sidebar-links">
+
+            <li>
+                <a href="dashboard.html">📊 Dashboard</a>
+            </li>
+
+            <li class="active">
+                <a href="problems.html">💻 Problems</a>
+            </li>
+
+            <li>
+                <a href="leaderboard.html">🏆 Leaderboard</a>
+            </li>
+
+            <li>
+                <a href="contest.html">🎯 Contests</a>
+            </li>
+
+            <li>
+                <a href="profile.html">👤 Profile</a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <main class="problem-layout">
+
+
+        <section class="problem-section">
+
+            <div class="problem-header">
+
+                <h1>1. Two Sum</h1>
+
+                <span class="difficulty easy">
+                    Easy
+                </span>
+
+            </div>
+
+            <div class="problem-body">
+
+                <p>
+                    Given an array of integers nums and an integer target,
+                    return indices of the two numbers such that they add up
+                    to target.
+                </p>
+
+                <h3>Example 1:</h3>
+
+                <div class="example-box">
+                    Input: nums = [2,7,11,15], target = 9<br>
+                    Output: [0,1]
+                </div>
+
+                <h3>Example 2:</h3>
+
+                <div class="example-box">
+                    Input: nums = [3,2,4], target = 6<br>
+                    Output: [1,2]
+                </div>
+
+                <h3>Constraints:</h3>
+
+                <ul class="constraint-list">
+                    <li>2 ≤ nums.length ≤ 10⁴</li>
+                    <li>-10⁹ ≤ nums[i] ≤ 10⁹</li>
+                    <li>-10⁹ ≤ target ≤ 10⁹</li>
+                </ul>
+
+            </div>
+
+        </section>
+        <section class="editor-section">
+
+            <div class="editor-header">
+
+                <select id="languageSelect">
+
+                    <option>C++</option>
+                    <option>Java</option>
+                    <option>Python</option>
+
+                </select>
+
+                <div>
+
+                    <button id="runBtn">
+                        Run
+                    </button>
+
+                    <button id="submitBtn">
+                        Submit
+                    </button>
+
+                </div>
+
+            </div>
+
+            <textarea
+                id="codeEditor"
+                spellcheck="false"
+            >
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+
+    }
+};
+            </textarea>
+
+            <div class="testcase-section">
+
+                <h3>Custom Test Case</h3>
+
+                <textarea
+                    id="testCaseInput"
+                    placeholder="Enter test case..."
+                ></textarea>
+
+            </div>
+
+            <div id="outputBox">
+
+                Output will appear here...
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/problem-detail.js"></script>
+
+</body>
+
+</html>
