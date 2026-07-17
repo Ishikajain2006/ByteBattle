@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>ByteBattle | Contests</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/contest.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+<aside class="sidebar">
+
+    <div class="sidebar-logo">
+
+        <h2>ByteBattle</h2>
+
+    </div>
+
+    <div class="sidebar-user">
+
+        <img
+            src="../img/profile.jpeg"
+            alt="Profile">
+
+        <h3 id="sidebarName">
+            Loading...
+        </h3>
+
+    </div>
+
+    <ul class="sidebar-links">
+
+        <li>
+            <a href="index.html">
+                🏠 Home
+            </a>
+        </li>
+
+        <li>
+            <a href="dashboard.html">
+                📊 Dashboard
+            </a>
+        </li>
+
+        <li>
+            <a href="problems.html">
+                💻 Problems
+            </a>
+        </li>
+
+        <li>
+            <a href="leaderboard.html">
+                🏆 Leaderboard
+            </a>
+        </li>
+
+        <li class="active">
+
+            <a href="contest.html">
+
+                🎯 Contests
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="profile.html">
+
+                👤 Profile
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="#"
+               id="logoutBtn">
+
+                🚪 Logout
+
+            </a>
+
+        </li>
+
+    </ul>
+
+</aside>
+
+<main class="contest-page">
+
+    <header class="contest-header">
+
+        <div>
+
+            <h1>
+
+                🎯 CONTESTS
+
+            </h1>
+
+            <p>
+
+                Compete with developers around the world.
+
+            </p>
+
+        </div>
+
+        <button
+            id="themeToggle"
+            class="theme-btn">
+
+            🌙
+
+        </button>
+
+    </header>
+
+    <div class="contest-layout">
+
+
+        <section class="contest-left">
+
+            <div class="featured-contest">
+
+                <h2>🔥 Upcoming Contest</h2>
+
+                <h3 id="contestTitle">
+                    ByteBattle Weekly Challenge #42
+                </h3>
+
+                <p>
+                    Improve your ranking by solving challenging coding problems.
+                    Participate and compete with developers worldwide.
+                </p>
+
+                <div class="countdown">
+
+                    <div class="time-box">
+                        <h1 id="days">00</h1>
+                        <span>Days</span>
+                    </div>
+
+                    <div class="time-box">
+                        <h1 id="hours">00</h1>
+                        <span>Hours</span>
+                    </div>
+
+                    <div class="time-box">
+                        <h1 id="minutes">00</h1>
+                        <span>Minutes</span>
+                    </div>
+
+                    <div class="time-box">
+                        <h1 id="seconds">00</h1>
+                        <span>Seconds</span>
+                    </div>
+
+                </div>
+
+                <button
+                    class="register-btn"
+                    id="registerBtn">
+
+                    Register Now
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <section class="contest-right">
+
+            <h2 class="section-title">
+
+                📅 Date Wise Contest
+
+            </h2>
+
+            <div id="contestContainer">
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>
+
+<script src="../js/script.js"></script>
+<script src="../js/contest.js"></script>
+
+</body>
+
+</html>

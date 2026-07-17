@@ -1,293 +1,469 @@
 
-const problems = [
 
-    {
-        id: 1,
-        title: "Two Sum",
-        difficulty: "easy",
-        description:
-            "Find indices of two numbers that add up to a target."
-    },
+const themeBtn =
+document.getElementById("themeToggle");
 
-    {
-        id: 2,
-        title: "Valid Parentheses",
-        difficulty: "easy",
-        description:
-            "Determine whether the input string is valid."
-    },
+function loadTheme(){
 
-    {
-        id: 3,
-        title: "Merge Sorted Array",
-        difficulty: "easy",
-        description:
-            "Merge two sorted arrays into one sorted array."
-    },
+    const savedTheme =
+    localStorage.getItem("theme") || "dark";
 
-    {
-        id: 4,
-        title: "Best Time To Buy And Sell Stock",
-        difficulty: "easy",
-        description:
-            "Find maximum profit from stock prices."
-    },
+    if(savedTheme === "light"){
 
-    {
-        id: 5,
-        title: "Climbing Stairs",
-        difficulty: "easy",
-        description:
-            "Count distinct ways to reach the top."
-    },
+        document.body.classList.add("light");
 
-    {
-        id: 6,
-        title: "Longest Substring Without Repeating Characters",
-        difficulty: "medium",
-        description:
-            "Find length of longest unique substring."
-    },
+        if(themeBtn){
 
-    {
-        id: 7,
-        title: "Group Anagrams",
-        difficulty: "medium",
-        description:
-            "Group words that are anagrams."
-    },
+            themeBtn.textContent = "☀️";
 
-    {
-        id: 8,
-        title: "Product Of Array Except Self",
-        difficulty: "medium",
-        description:
-            "Return array except current index product."
-    },
+        }
 
-    {
-        id: 9,
-        title: "Container With Most Water",
-        difficulty: "medium",
-        description:
-            "Find maximum area using two pointers."
-    },
-
-    {
-        id: 10,
-        title: "3Sum",
-        difficulty: "medium",
-        description:
-            "Find unique triplets with sum equal to zero."
-    },
-
-    {
-        id: 11,
-        title: "Binary Tree Level Order Traversal",
-        difficulty: "medium",
-        description:
-            "Traverse tree level by level."
-    },
-
-    {
-        id: 12,
-        title: "Top K Frequent Elements",
-        difficulty: "medium",
-        description:
-            "Find k most frequent elements."
-    },
-
-    {
-        id: 13,
-        title: "Number Of Islands",
-        difficulty: "medium",
-        description:
-            "Count connected islands in a grid."
-    },
-
-    {
-        id: 14,
-        title: "Word Ladder",
-        difficulty: "hard",
-        description:
-            "Transform one word into another."
-    },
-
-    {
-        id: 15,
-        title: "Median Of Two Sorted Arrays",
-        difficulty: "hard",
-        description:
-            "Find median in logarithmic complexity."
-    },
-
-    {
-        id: 16,
-        title: "Merge K Sorted Lists",
-        difficulty: "hard",
-        description:
-            "Merge multiple sorted linked lists."
-    },
-
-    {
-        id: 17,
-        title: "N Queens",
-        difficulty: "hard",
-        description:
-            "Place queens safely on a chessboard."
-    },
-
-    {
-        id: 18,
-        title: "Regular Expression Matching",
-        difficulty: "hard",
-        description:
-            "Implement regex matching support."
     }
 
+}
+
+loadTheme();
+
+if(themeBtn){
+
+    themeBtn.addEventListener("click",()=>{
+
+        document.body.classList.toggle("light");
+
+        const isLight =
+        document.body.classList.contains("light");
+
+        localStorage.setItem(
+            "theme",
+            isLight ? "light" : "dark"
+        );
+
+        themeBtn.textContent =
+        isLight ? "☀️" : "🌙";
+
+    });
+
+}
+
+
+
+const user =
+JSON.parse(
+localStorage.getItem("bytebattleUser")
+);
+
+if(!user){
+
+    alert("Please login first!");
+
+    window.location.href = "login.html";
+
+}
+
+const sidebarName =
+document.getElementById("sidebarName");
+
+if(sidebarName){
+
+    sidebarName.textContent =
+    user.name;
+
+}
+
+
+const problems = [
+
+{
+id:1,
+title:"Two Sum",
+difficulty:"Easy",
+acceptance:"54%",
+status:false
+},
+
+{
+id:2,
+title:"Palindrome Number",
+difficulty:"Easy",
+acceptance:"58%",
+status:false
+},
+
+{
+id:3,
+title:"Roman To Integer",
+difficulty:"Easy",
+acceptance:"61%",
+status:false
+},
+
+{
+id:4,
+title:"Longest Common Prefix",
+difficulty:"Easy",
+acceptance:"45%",
+status:false
+},
+
+{
+id:5,
+title:"Valid Parentheses",
+difficulty:"Easy",
+acceptance:"43%",
+status:false
+},
+
+{
+id:6,
+title:"Merge Sorted Array",
+difficulty:"Easy",
+acceptance:"49%",
+status:false
+},
+
+{
+id:7,
+title:"Climbing Stairs",
+difficulty:"Easy",
+acceptance:"52%",
+status:false
+},
+
+{
+id:8,
+title:"Binary Search",
+difficulty:"Easy",
+acceptance:"57%",
+status:false
+},
+
+{
+id:9,
+title:"Best Time To Buy Stock",
+difficulty:"Easy",
+acceptance:"55%",
+status:false
+},
+
+{
+id:10,
+title:"Valid Anagram",
+difficulty:"Easy",
+acceptance:"67%",
+status:false
+},
+
+{
+id:11,
+title:"3Sum",
+difficulty:"Medium",
+acceptance:"34%",
+status:false
+},
+
+{
+id:12,
+title:"Group Anagrams",
+difficulty:"Medium",
+acceptance:"60%",
+status:false
+},
+
+{
+id:13,
+title:"Rotate Image",
+difficulty:"Medium",
+acceptance:"52%",
+status:false
+},
+
+{
+id:14,
+title:"Product Of Array Except Self",
+difficulty:"Medium",
+acceptance:"66%",
+status:false
+},
+
+{
+id:15,
+title:"Longest Substring",
+difficulty:"Medium",
+acceptance:"39%",
+status:false
+},
+
+{
+id:16,
+title:"Top K Frequent Elements",
+difficulty:"Medium",
+acceptance:"63%",
+status:false
+},
+
+{
+id:17,
+title:"Course Schedule",
+difficulty:"Medium",
+acceptance:"49%",
+status:false
+},
+
+{
+id:18,
+title:"Number Of Islands",
+difficulty:"Medium",
+acceptance:"57%",
+status:false
+},
+
+{
+id:19,
+title:"Word Ladder",
+difficulty:"Hard",
+acceptance:"39%",
+status:false
+},
+
+{
+id:20,
+title:"N Queens",
+difficulty:"Hard",
+acceptance:"41%",
+status:false
+},
+
+{
+id:21,
+title:"Merge K Sorted Lists",
+difficulty:"Hard",
+acceptance:"56%",
+status:false
+},
+
+{
+id:22,
+title:"Regular Expression Matching",
+difficulty:"Hard",
+acceptance:"29%",
+status:false
+},
+
+{
+id:23,
+title:"Median Of Two Sorted Arrays",
+difficulty:"Hard",
+acceptance:"36%",
+status:false
+},
+
+{
+id:24,
+title:"Trapping Rain Water",
+difficulty:"Hard",
+acceptance:"46%",
+status:false
+}
+
 ];
-
-const container =
-    document.getElementById("problemContainer");
-
-const searchInput =
-    document.getElementById("searchInput");
-
-const filterButtons =
-    document.querySelectorAll(".filter-btn");
 
 
 
 let solvedProblems =
-    JSON.parse(
-        localStorage.getItem("solvedProblems")
-    ) || [];
 
-function renderProblems(problemList) {
+JSON.parse(
+localStorage.getItem("solvedProblems")
+) || [];
 
-    container.innerHTML = "";
+const container =
+document.getElementById("problemContainer");
 
-    if(problemList.length === 0){
+const searchInput =
+document.getElementById("searchInput");
 
-        container.innerHTML = `
-            <div class="no-results">
-                No problems found.
-            </div>
-        `;
+const filterButtons =
+document.querySelectorAll(".filter-btn");
 
-        return;
-    }
+const progressFill =
+document.getElementById("progressFill");
 
-    problemList.forEach(problem => {
+const progressText =
+document.getElementById("progressText");
 
-        const solved =
-            solvedProblems.includes(problem.id);
 
-        const card =
-        document.createElement("div");
 
-        card.className = "problem-card";
+function renderProblems(problemList){
 
-        card.innerHTML = `
+container.innerHTML="";
 
-            <h3>${problem.title}</h3>
+problemList.forEach(problem=>{
 
-            <p>
-                ${problem.description}
-            </p>
+const solved =
+solvedProblems.includes(problem.id);
 
-            <span class="badge ${problem.difficulty}">
-                ${capitalize(problem.difficulty)}
-            </span>
+const row =
+document.createElement("div");
 
-            <div class="card-footer">
+row.className="problem-row";
 
-                ${
-                    solved
-                    ?
-                    `<span class="solved">
-                        ✓ Solved
-                    </span>`
-                    :
-                    `<button
-                        class="solve-btn"
-                        onclick="markSolved(${problem.id})"
-                    >
-                        Solve
-                    </button>`
-                }
+row.innerHTML=`
 
-            </div>
+<div class="status">
 
-        `;
+${
+solved
+?
+'<span class="solved">✔</span>'
+:
+'<span class="unsolved">○</span>'
+}
 
-        container.appendChild(card);
-    });
+</div>
+
+<div class="problem-name">
+
+${problem.title}
+
+<small>
+
+Problem #${problem.id}
+
+</small>
+
+</div>
+
+<div>
+
+<span class="badge ${problem.difficulty.toLowerCase()}">
+
+${problem.difficulty}
+
+</span>
+
+</div>
+
+<div>
+
+${problem.acceptance}
+
+</div>
+
+<div>
+
+${
+solved
+?
+`<button
+class="solve-btn"
+disabled>
+
+Solved
+
+</button>`
+
+:
+
+`<button
+class="solve-btn"
+onclick="markSolved(${problem.id})">
+
+Solve
+
+</button>`
 
 }
 
-function capitalize(word){
+</div>
 
-    return word.charAt(0).toUpperCase()
-           + word.slice(1);
+`;
+
+container.appendChild(row);
+
+});
+
+updateProgress();
 
 }
 
 
-searchInput.addEventListener("input", () => {
 
-    const query =
-        searchInput.value.toLowerCase();
+function updateProgress(){
 
-    const filtered =
-        problems.filter(problem =>
-            problem.title
-            .toLowerCase()
-            .includes(query)
-        );
+const solved =
+solvedProblems.length;
 
-    renderProblems(filtered);
+const total =
+problems.length;
+
+const percent =
+(solved/total)*100;
+
+progressFill.style.width =
+percent + "%";
+
+progressText.textContent =
+`${solved} / ${total} Problems Solved`;
+
+}
+
+
+
+searchInput.addEventListener("input",()=>{
+
+const value =
+searchInput.value.toLowerCase();
+
+const filtered =
+
+problems.filter(problem=>
+
+problem.title
+.toLowerCase()
+.includes(value)
+
+);
+
+renderProblems(filtered);
 
 });
 
 
+filterButtons.forEach(button=>{
 
-filterButtons.forEach(button => {
+button.addEventListener("click",()=>{
 
-    button.addEventListener("click", () => {
+document
+.querySelector(".filter-btn.active")
+.classList.remove("active");
 
-        document
-            .querySelector(".active-filter")
-            .classList
-            .remove("active-filter");
+button.classList.add("active");
 
-        button.classList.add(
-            "active-filter"
-        );
+const difficulty =
+button.dataset.filter;
 
-        const difficulty =
-            button.dataset.filter;
+if(difficulty==="all"){
 
-        if(difficulty === "all"){
+renderProblems(problems);
 
-            renderProblems(problems);
-        }
-        else{
+}
 
-            const filtered =
-                problems.filter(
-                    problem =>
-                    problem.difficulty
-                    === difficulty
-                );
+else{
 
-            renderProblems(filtered);
-        }
+const filtered =
 
-    });
+problems.filter(problem=>
+
+problem.difficulty.toLowerCase()===difficulty
+
+);
+
+renderProblems(filtered);
+
+}
 
 });
 
+});
 
 function markSolved(id){
 
@@ -299,33 +475,97 @@ function markSolved(id){
             "solvedProblems",
             JSON.stringify(solvedProblems)
         );
-    }
 
-    renderProblems(problems);
+        updateDashboard();
+
+        renderProblems(problems);
+
+    }
 
 }
 
+function updateDashboard(){
 
+    const solved =
+        solvedProblems.length;
 
-container.addEventListener("click", (e) => {
+    const xp =
+        solved * 100;
 
-    const card =
-        e.target.closest(".problem-card");
+    let rank = "Beginner";
 
-    if(!card) return;
+    if(solved >= 5)
+        rank = "Apprentice";
 
+    if(solved >= 10)
+        rank = "Specialist";
 
-});
+    if(solved >= 20)
+        rank = "Expert";
 
-renderProblems(problems);
-
-function updateStats(){
+    if(solved >= 40)
+        rank = "Master";
 
     localStorage.setItem(
         "solvedCount",
-        solvedProblems.length
+        solved
+    );
+
+    localStorage.setItem(
+        "userXP",
+        xp
+    );
+
+    localStorage.setItem(
+        "userRank",
+        rank
     );
 
 }
 
-updateStats();
+
+const logoutBtn =
+document.getElementById("logoutBtn");
+
+if(logoutBtn){
+
+    logoutBtn.addEventListener("click",(e)=>{
+
+        e.preventDefault();
+
+        localStorage.removeItem(
+            "bytebattleUser"
+        );
+
+        window.location.href =
+        "login.html";
+
+    });
+
+}
+
+
+document.addEventListener("keydown",(e)=>{
+
+    if(e.key==="/"){
+
+        e.preventDefault();
+
+        searchInput.focus();
+
+    }
+
+});
+
+
+console.log(
+
+`Welcome ${user.name} to ByteBattle 🚀`
+
+);
+
+
+
+updateDashboard();
+
+renderProblems(problems);

@@ -2,28 +2,53 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | CodeArena</title>
 
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="css/dashboard.css">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    <title>ByteBattle | Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/dashboard.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+
 </head>
 
 <body>
-   
+
+<div class="dashboard">
 
     <aside class="sidebar">
 
         <div class="sidebar-logo">
-            <h2>CodeArena</h2>
+           <h2>ByteBattle</h2>
+        </div>
+
+        <div class="sidebar-user">
+           <img
+                src="../img/profile.jpeg"
+                class="avatar"
+                alt="User">
+            
+
+            <h3 id="sidebarName">
+                Loading...
+            </h3>
+
         </div>
 
         <ul class="sidebar-links">
-
             <li class="active">
                 <a href="dashboard.html">
                     📊 Dashboard
@@ -55,7 +80,7 @@
             </li>
 
             <li>
-                <a href="index.html">
+                <a href="#" id="logoutBtn">
                     🚪 Logout
                 </a>
             </li>
@@ -64,114 +89,205 @@
 
     </aside>
 
-    <main class="main-content">
 
+    <main class="main-content">
 
         <header class="topbar">
 
             <div>
-                <h1>Welcome Back 👋</h1>
-                <p>Track your coding journey and performance.</p>
+
+                <h1>
+                    Dashboard
+                </h1>
+
+                <p>
+                    Welcome back,
+                    <span id="welcomeName">
+                        User
+                    </span>
+                </p>
+
             </div>
 
-            <button id="themeToggle" class="theme-btn">
-                🌙
-            </button>
+            <div class="top-right">
+
+                <button
+                    id="themeToggle"
+                    class="theme-btn">
+
+                    🌙
+
+                </button>
+
+                <img
+                    src="../img/profile.jpeg"
+                    class="top-avatar"
+                    alt="Avatar">
+
+            </div>
 
         </header>
+
+
         <section class="stats-grid">
 
             <div class="stat-card">
 
-                <h3>Problems Solved</h3>
+                <h3>
+                    Problems Solved
+                </h3>
 
-                <h2 id="solvedCount">
-                    128
-                </h2>
+                <h1
+                    id="totalSolved">
 
-                <span>+12 this week</span>
+                    0
 
-            </div>
+                </h1>
 
-            <div class="stat-card">
-
-                <h3>Current Streak</h3>
-
-                <h2 id="streakCount">
-                    18 Days
-                </h2>
-
-                <span>Keep going 🔥</span>
+                <p>
+                    +12 this week
+                </p>
 
             </div>
 
             <div class="stat-card">
 
-                <h3>Global Rank</h3>
+                <h3>
+                    Coding Streak
+                </h3>
 
-                <h2>
-                    #542
-                </h2>
+                <h1
+                    id="streak">
 
-                <span>Top 12%</span>
+                    1 Day
+
+                </h1>
+
+                <p>
+                    Keep Coding 🔥
+                </p>
 
             </div>
 
             <div class="stat-card">
 
-                <h3>Contest Rating</h3>
+                <h3>
+                    Global Rank
+                </h3>
 
-                <h2>
-                    1645
-                </h2>
+                <h1
+                    id="globalRank">
 
-                <span>Knight</span>
+                    #9999
+
+                </h1>
+
+                <p>
+                    Top 50%
+                </p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h3>
+                    XP Points
+                </h3>
+
+                <h1
+                    id="xpPoints">
+
+                    0
+
+                </h1>
+
+                <p>
+                    Keep Practicing ⭐
+                </p>
 
             </div>
 
         </section>
 
-        <section class="dashboard-row">
+        <section class="dashboard-grid">
 
             <div class="progress-card">
 
-                <h2>Problem Progress</h2>
+                <h2>
+                    Problem Progress
+                </h2>
 
                 <div class="progress-box">
 
-                    <div class="progress-info">
-                        <span>Easy</span>
-                        <span>80 / 150</span>
+                    <div class="progress-title">
+
+                        <span>
+                            Easy
+                        </span>
+
+                        <span id="easyCount">
+                            0 / 50
+                        </span>
+
                     </div>
 
-                    <div class="progress-bar">
-                        <div class="easy-progress"></div>
+                    <div class="progress">
+
+                        <div
+                            class="progress-fill easy-fill">
+
+                        </div>
+
                     </div>
 
                 </div>
 
                 <div class="progress-box">
 
-                    <div class="progress-info">
-                        <span>Medium</span>
-                        <span>38 / 200</span>
+                    <div class="progress-title">
+
+                        <span>
+                            Medium
+                        </span>
+
+                        <span id="mediumCount">
+                            0 / 100
+                        </span>
+
                     </div>
 
-                    <div class="progress-bar">
-                        <div class="medium-progress"></div>
+                    <div class="progress">
+
+                        <div
+                            class="progress-fill medium-fill">
+
+                        </div>
+
                     </div>
 
                 </div>
 
                 <div class="progress-box">
 
-                    <div class="progress-info">
-                        <span>Hard</span>
-                        <span>10 / 100</span>
+                    <div class="progress-title">
+
+                        <span>
+                            Hard
+                        </span>
+
+                        <span id="hardCount">
+                            0 / 150
+                        </span>
+
                     </div>
 
-                    <div class="progress-bar">
-                        <div class="hard-progress"></div>
+                    <div class="progress">
+
+                        <div
+                            class="progress-fill hard-fill">
+
+                        </div>
+
                     </div>
 
                 </div>
@@ -180,76 +296,140 @@
 
             <div class="challenge-card">
 
-                <h2>Daily Challenge 🎯</h2>
+                <h2>
+                    🎯 Daily Challenge
+                </h2>
 
-                <h3>Longest Substring Without Repeating Characters</h3>
+                <div class="challenge-box">
 
-                <p>
-                    Solve today's challenge and maintain your streak.
-                </p>
+                    <h3 id="challengeTitle">
+                        Climbing Stairs
+                    </h3>
 
-                <button class="challenge-btn">
-                    Solve Now
-                </button>
+                    <span class="difficulty easy">
+                        Easy
+                    </span>
+
+                    <p>
+                        Solve today's challenge and maintain your coding streak.
+                    </p>
+
+                    <a
+                        href="problems.html"
+                        class="solve-btn">
+
+                        Solve Now
+
+                    </a>
+
+                </div>
 
             </div>
 
         </section>
-        
 
         <section class="submission-card">
 
-            <h2>Recent Submissions</h2>
+            <div class="section-header">
+
+                <h2>
+                    Recent Submissions
+                </h2>
+
+                <span>
+                    Last Attempts
+                </span>
+
+            </div>
 
             <table>
 
                 <thead>
 
                     <tr>
+
                         <th>Problem</th>
-                        <th>Status</th>
+
                         <th>Language</th>
+
+                        <th>Status</th>
+
                         <th>Time</th>
+
                     </tr>
 
                 </thead>
 
-                <tbody>
+                <tbody id="submissionTable">
 
                     <tr>
+
                         <td>Two Sum</td>
+
+                        <td>C++</td>
+
                         <td class="accepted">
                             Accepted
                         </td>
-                        <td>C++</td>
+
                         <td>2 min ago</td>
+
                     </tr>
 
                     <tr>
+
                         <td>Merge Sorted Array</td>
+
+                        <td>C++</td>
+
                         <td class="accepted">
                             Accepted
                         </td>
-                        <td>C++</td>
+
                         <td>15 min ago</td>
+
                     </tr>
 
                     <tr>
+
                         <td>Binary Tree Paths</td>
+
+                        <td>C++</td>
+
                         <td class="wrong">
                             Wrong Answer
                         </td>
-                        <td>C++</td>
+
                         <td>1 hour ago</td>
+
                     </tr>
 
                     <tr>
+
                         <td>Maximum Subarray</td>
+
+                        <td>C++</td>
+
                         <td class="accepted">
                             Accepted
                         </td>
-                        <td>C++</td>
+
                         <td>3 hours ago</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Climbing Stairs</td>
+
+                        <td>C++</td>
+
+                        <td class="accepted">
+                            Accepted
+                        </td>
+
+                        <td>Yesterday</td>
+
                     </tr>
 
                 </tbody>
@@ -258,11 +438,75 @@
 
         </section>
 
+        <section class="quick-grid">
+
+            <div class="quick-card">
+
+                <h3>
+                    🏆 Rank
+                </h3>
+
+                <h1 id="userRank">
+                    Beginner
+                </h1>
+
+            </div>
+
+            <div class="quick-card">
+
+                <h3>
+                    ⭐ XP
+                </h3>
+
+                <h1 id="xpValue">
+                    0
+                </h1>
+
+            </div>
+
+            <div class="quick-card">
+
+                <h3>
+                    💻 Contests
+                </h3>
+
+                <h1>
+                    12
+                </h1>
+
+            </div>
+
+            <div class="quick-card">
+
+                <h3>
+                    🔥 Success Rate
+                </h3>
+
+                <h1>
+                    92%
+                </h1>
+
+            </div>
+
+        </section>
+
+        <footer class="dashboard-footer">
+
+            <p>
+
+                © 2026 ByteBattle |
+                Practice • Compete • Improve
+
+            </p>
+
+        </footer>
+
     </main>
 
-    <script src="../js/script.js"></script>
-    <script src="../js/dashboard.js"></script>
+</div>
+
+<script src="../js/script.js"></script>
+<script src="../js/dashboard.js"></script>
 
 </body>
-
 </html>

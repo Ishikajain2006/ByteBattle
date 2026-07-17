@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:#111827;
+    box-shadow:0 5px 20px rgba(0,0,0,.3);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:28px;
+    font-weight:700;
+    color:#38bdf8;
+}
+
+.logo i{
+    color:#facc15;
+}
+
+nav{
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    transition:.3s;
+}
+
+nav a:hover,
+nav .active{
+    color:#38bdf8;
+}
+
+
+
+.hero{
+    text-align:center;
+    padding:50px 20px;
+}
+
+.hero h1{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    color:#cbd5e1;
+    font-size:18px;
+}
+
+
+
+.search-section{
+    display:flex;
+    justify-content:center;
+    margin-bottom:40px;
+}
+
+.search-section input{
+    width:420px;
+    padding:15px 20px;
+    border:none;
+    border-radius:40px;
+    outline:none;
+    font-size:16px;
+}
+
+
+.podium{
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    gap:25px;
+    margin-bottom:60px;
+    flex-wrap:wrap;
+}
+
+.card{
+    width:220px;
+    padding:25px;
+    text-align:center;
+    border-radius:18px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    margin:15px 0;
+    border:4px solid white;
+}
+
+.rank{
+    font-size:40px;
+}
+
+.first{
+    background:linear-gradient(135deg,#f59e0b,#fbbf24);
+    color:#111;
+}
+
+.second{
+    background:linear-gradient(135deg,#94a3b8,#cbd5e1);
+    color:#111;
+}
+
+.third{
+    background:linear-gradient(135deg,#fb7185,#f97316);
+}
+
+
+
+.leaderboard{
+    width:90%;
+    margin:auto;
+    margin-bottom:60px;
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:#1e293b;
+    border-radius:15px;
+    overflow:hidden;
+}
+
+thead{
+    background:#2563eb;
+}
+
+thead th{
+    padding:18px;
+    font-size:17px;
+}
+
+tbody tr{
+    transition:.3s;
+}
+
+tbody tr:nth-child(even){
+    background:#273549;
+}
+
+tbody tr:hover{
+    background:#334155;
+}
+
+tbody td{
+    padding:18px;
+    text-align:center;
+}
+
+
+
+.badge{
+    display:inline-block;
+    padding:6px 14px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.beginner{
+    background:#16a34a;
+}
+
+.intermediate{
+    background:#2563eb;
+}
+
+.expert{
+    background:#7c3aed;
+}
+
+.master{
+    background:#dc2626;
+}
+
+
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:#111827;
+    color:#94a3b8;
+}
+
+
+
+@media(max-width:900px){
+
+    header{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .search-section input{
+        width:90%;
+    }
+
+    .podium{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .card{
+        width:280px;
+    }
+}
+
+@media(max-width:600px){
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    thead th,
+    tbody td{
+        padding:12px;
+        font-size:14px;
+    }
+
+    .logo{
+        font-size:22px;
+    }
+}

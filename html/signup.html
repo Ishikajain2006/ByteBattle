@@ -1,66 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Signup - CodeArena</title>
 
-<link rel="stylesheet" href="../css/style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - ByteBattle</title>
+
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
 
-<nav class="navbar">
+    <nav class="navbar">
 
-    <div class="logo">CodeArena</div>
+        <div class="logo">ByteBattle</div>
 
-    <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="login.html">Login</a></li>
-    </ul>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
 
-    <button id="themeToggle">🌙</button>
+        <button id="themeToggle">🌙</button>
 
-</nav>
+    </nav>
 
-<div class="auth-container">
+    <div class="auth-container">
 
-    <form class="auth-box">
 
-        <h2>Create Account</h2>
+        <form id="signupForm" class="auth-box">
 
-        <input
-            type="text"
-            placeholder="Full Name"
-            required
-        >
+            <h2>Create Account</h2>
 
-        <input
-            type="email"
-            placeholder="Email Address"
-            required
-        >
+            <input
+                type="text"
+                id="name"
+                placeholder="Full Name"
+                required>
 
-        <input
-            type="password"
-            placeholder="Password"
-            required
-        >
+            <input
+                type="email"
+                id="email"
+                placeholder="Email Address"
+                required>
 
-        <button type="submit" class="btn primary-btn">
-            Create Account
-        </button>
+            <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                required>
 
-        <p>
-            Already have an account?
-            <a href="login.html">Login</a>
-        </p>
+            <button
+                type="submit"
+                class="btn primary-btn">
+                Create Account
+            </button>
 
-    </form>
+            <p>
+                Already have an account?
+                <a href="login.html">Login</a>
+            </p>
 
-</div>
+        </form>
 
-<script src="../js/script.js"></script>
+    </div>
+
+    <script src="../js/script.js"></script>
 
 </body>
+
 </html>

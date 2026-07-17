@@ -1,199 +1,185 @@
 
-function animateCounter(id, target, duration = 1500) {
-    const element = document.getElementById(id);
 
-    if (!element) return;
+const themeBtn = document.getElementById("themeToggle");
 
-    let start = 0;
-    const increment = target / (duration / 16);
+function loadTheme() {
 
-    const counter = setInterval(() => {
+    const savedTheme =
+        localStorage.getItem("theme") || "dark";
 
-        start += increment;
+    if (savedTheme === "light") {
 
-        if (start >= target) {
-            start = target;
-            clearInterval(counter);
+        document.body.classList.add("light");
+
+        if (themeBtn) {
+            themeBtn.textContent = "☀️";
         }
-
-        element.textContent = Math.floor(start);
-
-    }, 16);
+    }
 }
 
-animateCounter("solvedCount", 128);
+loadTheme();
 
+if (themeBtn) {
 
+    themeBtn.addEventListener("click", () => {
 
-const dailyChallenges = [
+        document.body.classList.toggle("light");
 
-    "Longest Substring Without Repeating Characters",
+        const isLight =
+            document.body.classList.contains("light");
 
-    "Merge Sorted Array",
+        localStorage.setItem(
+            "theme",
+            isLight ? "light" : "dark"
+        );
 
-    "Best Time To Buy And Sell Stock",
+        themeBtn.textContent =
+            isLight ? "☀️" : "🌙";
 
-    "Maximum Subarray",
+    });
 
-    "Valid Parentheses",
-
-    "Binary Tree Level Order Traversal",
-
-    "Product Of Array Except Self",
-
-    "Climbing Stairs",
-
-    "Two Sum",
-
-    "Group Anagrams"
-];
-
-const challengeTitle =
-    document.querySelector(".challenge-card h3");
-
-if (challengeTitle) {
-
-    const challengeIndex =
-        new Date().getDate() % dailyChallenges.length;
-
-    challengeTitle.textContent =
-        dailyChallenges[challengeIndex];
 }
 
 
-window.addEventListener("load", () => {
-
-    const bars = document.querySelectorAll(
-        ".easy-progress, .medium-progress, .hard-progress"
+const user =
+    JSON.parse(
+        localStorage.getItem("bytebattleUser")
     );
 
-    bars.forEach(bar => {
+if (!user) {
 
-        const width = bar.style.width || getComputedStyle(bar).width;
+    alert("Please login first!");
 
-        bar.style.width = "0";
-
-        setTimeout(() => {
-            bar.style.transition = "width 1.5s ease";
-            bar.style.width = width;
-        }, 300);
-    });
-});
-
-
-const quotes = [
-
-    "Consistency beats intensity.",
-
-    "One problem solved today is better than ten postponed.",
-
-    "Every accepted solution improves your thinking.",
-
-    "Focus on progress, not perfection.",
-
-    "Small daily improvements lead to big results.",
-
-    "The best coders were once beginners.",
-
-    "Practice. Debug. Learn. Repeat."
-];
-
-function showMotivation() {
-
-    const quote =
-        quotes[Math.floor(Math.random() * quotes.length)];
-
-    setTimeout(() => {
-        alert("💡 Daily Motivation\n\n" + quote);
-    }, 1200);
-}
-
-showMotivation();
-
-
-const challengeBtn =
-    document.querySelector(".challenge-btn");
-
-if (challengeBtn) {
-
-    challengeBtn.addEventListener("click", () => {
-
-        alert(
-            "🚀 Problem page will open in Phase 3."
-        );
-    });
+    window.location.href =
+        "login.html";
 }
 
 
-const rows =
-    document.querySelectorAll("tbody tr");
+const sidebarName =
+    document.getElementById("sidebarName");
 
-rows.forEach(row => {
+if (sidebarName) {
 
-    row.addEventListener("mouseenter", () => {
-        row.style.cursor = "pointer";
-    });
+    sidebarName.textContent =
+        user.name;
+}
 
-    row.addEventListener("click", () => {
 
-        const problem =
-            row.children[0].textContent;
+const welcomeName =
+    document.getElementById("welcomeName");
 
-        alert(
-            `Viewing submission for: ${problem}`
+if (welcomeName) {
+
+    welcomeName.textContent =
+        user.name;
+}
+
+
+
+const solved =
+    JSON.parse(
+        localStorage.getItem("solvedProblems")
+    ) || [];
+
+const solvedElement =
+    document.getElementById("solvedCount");
+
+if (solvedElement) {
+
+    solvedElement.textContent =
+        solved.length;
+}
+
+
+
+
+const xp =
+    solved.length * 100;
+
+const xpElement =
+    document.getElementById("xpValue");
+
+if (xpElement) {
+
+    xpElement.textContent = xp;
+}
+
+
+
+
+let rank = "Beginner";
+
+if (solved.length >= 5)
+    rank = "Apprentice";
+
+if (solved.length >= 10)
+    rank = "Specialist";
+
+if (solved.length >= 20)
+    rank = "Expert";
+
+if (solved.length >= 40)
+    rank = "Master";
+
+const rankElement =
+    document.getElementById("userRank");
+
+if (rankElement) {
+
+    rankElement.textContent =
+        rank;
+}
+
+
+const streakElement =
+    document.getElementById("streakCount");
+
+if (streakElement) {
+
+    streakElement.textContent =
+        Math.max(1, solved.length);
+}
+
+
+const easyFill =
+    document.querySelector(".easy-fill");
+
+const mediumFill =
+    document.querySelector(".medium-fill");
+
+const hardFill =
+    document.querySelector(".hard-fill");
+
+if (easyFill)
+    easyFill.style.width =
+        Math.min(solved.length * 10,100) + "%";
+
+if (mediumFill)
+    mediumFill.style.width =
+        Math.min(solved.length * 6,100) + "%";
+
+if (hardFill)
+    hardFill.style.width =
+        Math.min(solved.length * 3,100) + "%";
+
+
+
+const logoutBtn =
+    document.getElementById("logoutBtn");
+
+if (logoutBtn) {
+
+    logoutBtn.addEventListener("click",(e)=>{
+
+        e.preventDefault();
+
+        localStorage.removeItem(
+            "bytebattleUser"
         );
 
-        
+        window.location.href =
+            "login.html";
+
     });
 
-});
-
-
-
-const userData = {
-
-    username: "Ishika",
-
-    solved: 128,
-
-    streak: 18,
-
-    rank: 542,
-
-    rating: 1645
-};
-
-console.log(
-    "User Dashboard Loaded:",
-    userData
-);
-
-
-
-window.addEventListener("DOMContentLoaded", () => {
-
-    const heading =
-        document.querySelector(".topbar h1");
-
-    if (heading) {
-
-        const hour =
-            new Date().getHours();
-
-        let greeting = "Welcome Back";
-
-        if (hour < 12) {
-            greeting = "Good Morning";
-        }
-        else if (hour < 18) {
-            greeting = "Good Afternoon";
-        }
-        else {
-            greeting = "Good Evening";
-        }
-
-        heading.textContent =
-            `${greeting} 👋`;
-    }
-
-});
+}

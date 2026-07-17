@@ -33,11 +33,16 @@ body{
     justify-content:space-between;
     align-items:center;
     padding:20px 8%;
+    position:sticky;
+    top:0;
+    background:var(--bg);
+    z-index:1000;
 }
 
 .logo{
     font-size:1.8rem;
     font-weight:700;
+    color:var(--accent);
 }
 
 .nav-links{
@@ -56,14 +61,22 @@ body{
 }
 
 #themeToggle{
+    width:45px;
+    height:45px;
     border:none;
-    padding:10px 14px;
+    border-radius:50%;
     cursor:pointer;
-    border-radius:10px;
+    background:var(--card);
+    color:var(--text);
+    font-size:1.1rem;
+    transition:0.3s;
 }
 
+#themeToggle:hover{
+    transform:rotate(180deg);
+}
 .hero{
-    min-height:80vh;
+    min-height:85vh;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -76,8 +89,9 @@ body{
 }
 
 .hero h1{
-    font-size:3.5rem;
+    font-size:4rem;
     margin-bottom:20px;
+    line-height:1.2;
 }
 
 .hero p{
@@ -93,10 +107,16 @@ body{
 }
 
 .btn{
-    padding:12px 30px;
-    border-radius:10px;
+    display:inline-block;
+    padding:14px 30px;
+    border-radius:12px;
     text-decoration:none;
     font-weight:600;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
 }
 
 .primary-btn{
@@ -120,8 +140,14 @@ body{
 
 .feature-card{
     background:var(--card);
-    padding:25px;
-    border-radius:15px;
+    padding:30px;
+    border-radius:18px;
+    transition:0.3s;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.feature-card:hover{
+    transform:translateY(-8px);
 }
 
 .feature-card h3{
@@ -138,18 +164,24 @@ body{
 .auth-box{
     width:400px;
     background:var(--card);
-    padding:35px;
-    border-radius:18px;
+    padding:40px;
+    border-radius:20px;
     display:flex;
     flex-direction:column;
     gap:18px;
+    box-shadow:0 15px 35px rgba(0,0,0,.2);
 }
 
 .auth-box input{
     padding:14px;
-    border:none;
+    border:2px solid transparent;
     border-radius:10px;
     outline:none;
+    transition:.3s;
+}
+
+.auth-box input:focus{
+    border-color:var(--accent);
 }
 
 .auth-box button{
@@ -183,4 +215,13 @@ body{
     .auth-box{
         width:90%;
     }
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+::selection{
+    background:var(--accent);
+    color:white;
 }

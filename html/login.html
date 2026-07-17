@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login - CodeArena</title>
+
+<title>Login - ByteBattle</title>
 
 <link rel="stylesheet" href="../css/style.css">
+
 </head>
 
 <body>
 
 <nav class="navbar">
 
-    <div class="logo">CodeArena</div>
+    <div class="logo">ByteBattle</div>
 
     <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -25,29 +29,36 @@
 
 <div class="auth-container">
 
-    <form class="auth-box">
+    <form id="loginForm" class="auth-box">
 
         <h2>Welcome Back</h2>
 
         <input
             type="email"
+            id="loginEmail"
             placeholder="Email Address"
-            required
-        >
+            required>
 
         <input
             type="password"
+            id="loginPassword"
             placeholder="Password"
-            required
-        >
+            required>
 
-        <button type="submit" class="btn primary-btn">
+        <button
+            type="submit"
+            class="btn primary-btn">
+
             Login
+
         </button>
 
         <p>
             Don't have an account?
-            <a href="signup.html">Create Account</a>
+
+            <a href="signup.html">
+                Create Account
+            </a>
         </p>
 
     </form>
@@ -57,4 +68,5 @@
 <script src="../js/script.js"></script>
 
 </body>
+
 </html>

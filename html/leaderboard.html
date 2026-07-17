@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ByteBattle | Leaderboard</title>
+
+    <link rel="stylesheet" href="../css/leaderboard.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            <i class="fa-solid fa-code"></i>
+            <span>ByteBattle</span>
+        </div>
+
+        <nav>
+
+            <a href="index.html">Home</a>
+            <a href="problems.html">Problems</a>
+            <a href="contest.html">Contests</a>
+            <a href="leaderboard.html" class="active">Leaderboard</a>
+            <a href="profile.html">Profile</a>
+
+        </nav>
+
+    </header>
+
+    <section class="hero">
+
+        <h1>
+            🏆 Global Leaderboard
+        </h1>
+
+        <p>
+            Compete with the best coders and climb the rankings.
+        </p>
+
+    </section>
+
+    <section class="search-section">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search username...">
+
+    </section>
+
+    <section class="podium">
+
+        <div class="card second">
+
+            <div class="rank">
+                🥈
+            </div>
+
+            <img
+                src="https://i.pravatar.cc/120?img=12">
+
+            <h3>
+                Rahul
+            </h3>
+
+            <p>
+                2300 XP
+            </p>
+
+        </div>
+
+        <div class="card first">
+
+            <div class="rank">
+                🥇
+            </div>
+
+            <img
+                src="../img/profile.jpeg">
+
+            <h3>
+                Ishika
+            </h3>
+
+            <p>
+                2800 XP
+            </p>
+
+        </div>
+
+        <div class="card third">
+
+            <div class="rank">
+                🥉
+            </div>
+
+            <img
+                src="https://i.pravatar.cc/120?img=5">
+
+            <h3>
+                Aditya
+            </h3>
+
+            <p>
+                2100 XP
+            </p>
+
+        </div>
+
+    </section>
+
+    <section class="leaderboard">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Rank</th>
+
+                    <th>User</th>
+
+                    <th>Problems</th>
+
+                    <th>XP</th>
+
+                    <th>Level</th>
+
+                    <th>Streak</th>
+
+                    <th>Badge</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="leaderboardBody">
